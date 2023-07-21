@@ -15,19 +15,19 @@ class GradientButton extends StatelessWidget {
       end: Alignment(1, 0.01),
       colors: [Color(0xFFA056FE), Color(0xFF916BFF)],
     ),
+    this.onTap,
   }) : super(key: key);
 
   final String buttonText;
   final Widget icon;
   final Gradient gradient;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return Ink(
       child: InkWell(
-        onTap: () {
-          print("Button Tapped");
-        },
+        onTap: onTap,
         child: Container(
             height: 60,
             width: double.infinity,

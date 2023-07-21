@@ -1,14 +1,17 @@
+import 'package:bill_payment_app/screens/Scan%20Bill%20Screen/scan_bill_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../components/button.dart';
-import '../constants.dart';
+import '../../common/gradient_button.dart';
+import '../../constants.dart';
+import '../../size_config.dart';
 
 class AddBillScreen extends StatelessWidget {
   const AddBillScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -28,10 +31,9 @@ class AddBillScreen extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  Image.asset(
+                  SvgPicture.asset(
                     Constants.kUser,
                     height: 24,
-                    width: 24,
                   )
                 ],
               ),
@@ -88,6 +90,8 @@ class AddBillScreen extends StatelessWidget {
                   end: Alignment(1, 0.01),
                   colors: [Color(0xFF56ADFE), Color(0xFF6B70FF)],
                 ),
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const ScanBillScreen())),
               )
             ],
           ),
