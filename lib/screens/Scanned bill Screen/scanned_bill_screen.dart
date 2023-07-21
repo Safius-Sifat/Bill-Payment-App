@@ -110,7 +110,7 @@ class ScannedBillScreen extends StatelessWidget {
               SizedBox(
                   width: getProportionateScreenWidth(354),
                   child: GradientButton(
-                    buttonText: "Continue",
+                    buttonText: "CONTINUE",
                     onTap: () => Navigator.of(context).pop(),
                   ))
             ],

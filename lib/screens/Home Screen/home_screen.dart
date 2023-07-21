@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:bill_payment_app/screens/Bill%20Analysis%20Screen/bill_analysis_screen.dart';
 import 'package:bill_payment_app/screens/Scanned%20bill%20Screen/scanned_bill_screen.dart';
 import 'package:bill_payment_app/size_config.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen>
     super.initState();
     tabController = TabController(length: 2, vsync: this);
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _showModalSheet(context);
+      _scannedBillModalSheet(context);
     });
   }
 
@@ -37,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen>
     super.dispose();
   }
 
-  void _showModalSheet(BuildContext context) {
+  void _scannedBillModalSheet(BuildContext context) {
     showModalBottomSheet(
       isScrollControlled: true,
       isDismissible: false,
@@ -45,6 +46,20 @@ class _HomeScreenState extends State<HomeScreen>
       context: context,
       builder: (BuildContext context) {
         return ScannedBillScreen(
+          context: context,
+        );
+      },
+    );
+  }
+
+  void _analysisBillModalSheet(BuildContext context) {
+    showModalBottomSheet(
+      isScrollControlled: true,
+      isDismissible: false,
+      backgroundColor: Colors.transparent,
+      context: context,
+      builder: (BuildContext context) {
+        return BillAnalysisScreen(
           context: context,
         );
       },
@@ -73,8 +88,12 @@ class _HomeScreenState extends State<HomeScreen>
       ),
       body: Column(
         children: [
-          const HeroSection(),
-          const ConsumptionSection(),
+          GestureDetector(
+              onTap: () => _analysisBillModalSheet(context),
+              child: const HeroSection()),
+          GestureDetector(
+              onTap: () => _analysisBillModalSheet(context),
+              child: const ConsumptionSection()),
           const Divider(height: 2, color: Color(0xFFE4E4E4)),
           CustomTabBar(tabController: tabController),
           const GraphIndicator(),
