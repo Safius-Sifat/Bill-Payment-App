@@ -1,16 +1,14 @@
-# bill_payment_app
+# Bill Payment App
 
-A new Flutter project.
+A  Flutter recruitment project fot the Gizantech.
 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+Here is the apk download link for the Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [Lab: Write your first Flutter app](https://github.com/Safius-Sifat/bill_payment_app/releases/download/latext/Bill.payment.app.apk)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+Thanks for letting me have the opportunity. Looking forward to hear from you again.
