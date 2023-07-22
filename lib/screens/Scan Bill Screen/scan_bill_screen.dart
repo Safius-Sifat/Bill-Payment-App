@@ -1,5 +1,6 @@
 import 'package:bill_payment_app/constants.dart';
-import 'package:bill_payment_app/screens/Home%20Screen/home_screen.dart';
+import 'package:bill_payment_app/screens/Home%20Screen/home_page.dart';
+
 import 'package:bill_payment_app/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -12,8 +13,10 @@ class ScanBillScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => const HomeScreen())),
+          onTap: () => Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => const HomePage(
+                    value: "scan",
+                  ))),
           child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(

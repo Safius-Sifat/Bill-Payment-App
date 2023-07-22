@@ -9,8 +9,8 @@ import 'package:bill_payment_app/size_config.dart';
 import 'components/custom_text.dart';
 import 'components/nesco_card.dart';
 
-class ScannedBillScreen extends StatelessWidget {
-  const ScannedBillScreen({
+class ScannedBillSheet extends StatelessWidget {
+  const ScannedBillSheet({
     Key? key,
     required this.context,
   }) : super(key: key);

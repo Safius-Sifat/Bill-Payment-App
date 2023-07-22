@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:bill_payment_app/screens/Home%20Screen/components/consumption_section.dart';
-import 'package:bill_payment_app/screens/Scanned%20bill%20Screen/components/nesco_card.dart';
+import 'package:bill_payment_app/screens/Scanned%20bill%20Sheet/components/nesco_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -8,8 +8,8 @@ import '../../common/gradient_button.dart';
 import '../../constants.dart';
 import '../../size_config.dart';
 
-class BillAnalysisScreen extends StatelessWidget {
-  const BillAnalysisScreen({
+class BillAnalysisSheet extends StatelessWidget {
+  const BillAnalysisSheet({
     Key? key,
     required this.context,
   }) : super(key: key);

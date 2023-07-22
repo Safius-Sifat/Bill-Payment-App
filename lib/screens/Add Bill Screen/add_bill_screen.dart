@@ -1,3 +1,4 @@
+import 'package:bill_payment_app/screens/Home%20Screen/home_page.dart';
 import 'package:bill_payment_app/screens/Scan%20Bill%20Screen/scan_bill_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -75,6 +76,8 @@ class AddBillScreen extends StatelessWidget {
                   Constants.kscan,
                   height: 16,
                 ),
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const ScanBillScreen())),
               ),
               const SizedBox(
                 height: 8,
@@ -91,7 +94,9 @@ class AddBillScreen extends StatelessWidget {
                   colors: [Color(0xFF56ADFE), Color(0xFF6B70FF)],
                 ),
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const ScanBillScreen())),
+                    builder: (context) => const HomePage(
+                          value: "manual",
+                        ))),
               )
             ],
           ),

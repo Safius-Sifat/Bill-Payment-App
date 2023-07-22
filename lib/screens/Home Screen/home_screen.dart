@@ -1,7 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:bill_payment_app/screens/Bill%20Analysis%20Screen/bill_analysis_screen.dart';
-import 'package:bill_payment_app/screens/Scanned%20bill%20Screen/scanned_bill_screen.dart';
+import 'package:bill_payment_app/screens/Bill%20Analysis%20Sheet/bill_analysis_sheet.dart';
+import 'package:bill_payment_app/screens/Scanned%20bill%20Sheet/scanned_bill_sheet.dart';
 import 'package:bill_payment_app/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -27,29 +27,12 @@ class _HomeScreenState extends State<HomeScreen>
   void initState() {
     super.initState();
     tabController = TabController(length: 2, vsync: this);
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _scannedBillModalSheet(context);
-    });
   }
 
   @override
   void dispose() {
     tabController.dispose();
     super.dispose();
-  }
-
-  void _scannedBillModalSheet(BuildContext context) {
-    showModalBottomSheet(
-      isScrollControlled: true,
-      isDismissible: false,
-      backgroundColor: Colors.transparent,
-      context: context,
-      builder: (BuildContext context) {
-        return ScannedBillScreen(
-          context: context,
-        );
-      },
-    );
   }
 
   void _analysisBillModalSheet(BuildContext context) {
@@ -59,14 +42,12 @@ class _HomeScreenState extends State<HomeScreen>
       backgroundColor: Colors.transparent,
       context: context,
       builder: (BuildContext context) {
-        return BillAnalysisScreen(
+        return BillAnalysisSheet(
           context: context,
         );
       },
     );
   }
-
-  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -108,45 +89,6 @@ class _HomeScreenState extends State<HomeScreen>
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-          currentIndex: selectedIndex,
-          onTap: (index) {
-            setState(() {
-              selectedIndex = index;
-            });
-          },
-          selectedItemColor: const Color(0xFF6B70FF),
-          unselectedItemColor: Colors.grey[500],
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          items: [
-            const BottomNavigationBarItem(
-                icon: Icon(Icons.grid_view_rounded), label: "Home"),
-            BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                  Constants.kbill,
-                  color: selectedIndex == 1
-                      ? const Color(0xFF6B70FF)
-                      : Colors.grey[500],
-                ),
-                label: "Bill"),
-            BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                  Constants.kscan,
-                  color: selectedIndex == 2
-                      ? const Color(0xFF6B70FF)
-                      : Colors.grey[500],
-                ),
-                label: "Scan"),
-            BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                  Constants.kUser,
-                  color: selectedIndex == 3
-                      ? const Color(0xFF6B70FF)
-                      : Colors.grey[500],
-                ),
-                label: "User"),
-          ]),
     );
   }
 }
