@@ -1,6 +1,6 @@
 # Task 2: Bill Payment App
 
-A  Flutter recruitment project fot the Gizantech.
+A  Flutter mobile demo app for online electricity bill payment.
 
 ## Getting Started
 
